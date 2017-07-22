@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ECommerceDemo.Data;
+using AutoMapper;
 
 namespace WebApplicationBasic
 {
@@ -33,6 +34,8 @@ namespace WebApplicationBasic
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper();
 
             services.AddScoped<DbInitializer>();
 
