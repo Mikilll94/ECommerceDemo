@@ -9,9 +9,8 @@ namespace ECommerceDemo.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public int? CategoryId { get; set; }
         public int? SubCategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
+        public Subcategory Subcategory { get; set; }
     }
 }

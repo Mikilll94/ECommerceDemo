@@ -8,12 +8,10 @@ namespace ECommerceDemo.Controllers.Resources
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<ProductResource> Products { get; set; }
         public ICollection<SubcategoryResource> Subcategories { get; set; }
 
         public CategoryResource()
         {
-            Products = new Collection<ProductResource>();
             Subcategories = new Collection<SubcategoryResource>();
         }
     }

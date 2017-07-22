@@ -11,8 +11,8 @@ namespace ECommerceDemo.Models
         public string Name { get; set; }
         public int CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public Category Category { get; set; }
+        public ICollection<Product> Products { get; set; }
 
         public Subcategory()
         {
