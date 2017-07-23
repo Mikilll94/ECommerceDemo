@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-product-form',
@@ -7,15 +7,20 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-    products: any[];
+    categories: any[];
+    category: any = {};
+    subcategories: any[];
 
-    constructor(private productService: ProductService) { }
+    constructor(private categoriesService: CategoriesService) { }
 
     ngOnInit() {
-        this.productService.getProducts().subscribe(products => {
-            this.products = products;
-            console.log("PRODUCTS", products);
+        this.categoriesService.getProducts().subscribe(categories => {
+            this.categories = categories;
         });
   }
 
+    onCategoryChange() {
+        var selectedCategory = this.categories.find(c => c.id == this.category);
+        this.subcategories = selectedCategory ? selectedCategory.subcategories : [];
+    }
 }

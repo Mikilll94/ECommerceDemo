@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { sharedConfig } from './app.module';
 
-import { ProductService } from './services/product.service';
+import { CategoriesService } from './services/categories.service';
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -12,7 +12,7 @@ import { ProductService } from './services/product.service';
         ...sharedConfig.imports
     ],
     providers: [
-        ProductService
+        CategoriesService
     ]
 })
 export class AppModule {

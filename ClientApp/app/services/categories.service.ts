@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ProductService {
+export class CategoriesService {
 
     constructor(private http: Http, @Inject('ORIGIN_URL') private originUrl: string) { }
 
