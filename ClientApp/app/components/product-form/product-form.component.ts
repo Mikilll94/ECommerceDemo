@@ -14,10 +14,9 @@ export class ProductFormComponent implements OnInit {
     constructor(private categoriesService: CategoriesService) { }
 
     ngOnInit() {
-        this.categoriesService.getProducts().subscribe(categories => {
-            this.categories = categories;
-        });
-  }
+        this.categoriesService.getProducts().subscribe(categories =>
+            this.categories = categories);
+    }
 
     onCategoryChange() {
         var selectedCategory = this.categories.find(c => c.id == this.category);
